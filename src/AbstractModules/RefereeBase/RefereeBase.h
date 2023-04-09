@@ -2,8 +2,8 @@
 // Created by jp on 7/17/21.
 //
 
-#ifndef VSS_UNIFICATION_REFEREEBASE_H
-#define VSS_UNIFICATION_REFEREEBASE_H
+#ifndef VSS_BASE_SOFTWARE_REFEREEBASE_H
+#define VSS_BASE_SOFTWARE_REFEREEBASE_H
 
 #include "Packages/Packages.h"
 
@@ -21,4 +21,4 @@ namespace Factory {
   inline static auto& referee =
       Singleton<InheritanceFactory<RefereeBase, QThreadPool*>>::instance();
 }
-#endif // VSS_UNIFICATION_REFEREEBASE_H
+#endif // VSS_BASE_SOFTWARE_REFEREEBASE_H

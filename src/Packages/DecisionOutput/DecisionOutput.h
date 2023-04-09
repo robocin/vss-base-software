@@ -2,8 +2,8 @@
 // Created by jose-cruz on 04/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_DECISIONOUTPUT_H
-#define VSS_UNIFICATION_DECISIONOUTPUT_H
+#ifndef VSS_BASE_SOFTWARE_DECISIONOUTPUT_H
+#define VSS_BASE_SOFTWARE_DECISIONOUTPUT_H
 
 #include <soccer-common/soccer-common.h>
 #include "Packages/Tactic/Tactic.h"
@@ -37,4 +37,4 @@ namespace Decision {
   using Output = QVector<Play>;
 } // namespace Decision
 
-#endif // VSS_UNIFICATION_DECISIONOUTPUT_H
+#endif // VSS_BASE_SOFTWARE_DECISIONOUTPUT_H

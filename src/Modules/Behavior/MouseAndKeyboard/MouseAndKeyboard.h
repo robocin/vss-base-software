@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_MOUSEANDKEYBOARD_H
-#define VSS_UNIFICATION_MOUSEANDKEYBOARD_H
+#ifndef VSS_BASE_SOFTWARE_MOUSEANDKEYBOARD_H
+#define VSS_BASE_SOFTWARE_MOUSEANDKEYBOARD_H
 
 #include "Modules/Modules.h"
 
@@ -46,4 +46,4 @@ class MouseAndKeyboard : public BehaviorBase {
   void receiveKeyReleased(Qt::Key key);
 };
 
-#endif // VSS_UNIFICATION_MOUSEANDKEYBOARD_H
+#endif // VSS_BASE_SOFTWARE_MOUSEANDKEYBOARD_H

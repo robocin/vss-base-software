@@ -2,8 +2,8 @@
 // Created by jose-cruz on 17/07/2021.
 //
 
-#ifndef VSS_UNIFICATION_COMMUNICATIONBST_H
-#define VSS_UNIFICATION_COMMUNICATIONBST_H
+#ifndef VSS_BASE_SOFTWARE_COMMUNICATIONBST_H
+#define VSS_BASE_SOFTWARE_COMMUNICATIONBST_H
 
 #include <QUdpSocket>
 #include <QNetworkInterface>
@@ -34,4 +34,4 @@ class CommunicationBSt : public CommunicationBase {
   void receiveNavigation(const Navigation::Output& navigation);
 };
 
-#endif // VSS_UNIFICATION_COMMUNICATIONBST_H
+#endif // VSS_BASE_SOFTWARE_COMMUNICATIONBST_H

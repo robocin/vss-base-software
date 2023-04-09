@@ -1,4 +1,4 @@
-set(ROBOCIN_PROJECT_NAME "vss-unification")
+set(ROBOCIN_PROJECT_NAME "vss-base-software")
 
 if (NOT DEFINED ROBOCIN_PROJECT_NAME)
   message(FATAL_ERROR "ROBOCIN_PROJECT_NAME is not defined.")

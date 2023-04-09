@@ -2,8 +2,8 @@
 // Created by jose-cruz on 12/09/2021.
 //
 
-#ifndef VSS_UNIFICATION_NAVIGATIONBASE_H
-#define VSS_UNIFICATION_NAVIGATIONBASE_H
+#ifndef VSS_BASE_SOFTWARE_NAVIGATIONBASE_H
+#define VSS_BASE_SOFTWARE_NAVIGATIONBASE_H
 
 #include "Packages/Packages.h"
 
@@ -22,4 +22,4 @@ namespace Factory {
       singleton_v<InheritanceFactory<NavigationBase, int, QThreadPool*>>;
 }
 
-#endif // VSS_UNIFICATION_NAVIGATIONBASE_H
+#endif // VSS_BASE_SOFTWARE_NAVIGATIONBASE_H

@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_PLAYERUTILS_H
-#define VSS_UNIFICATION_PLAYERUTILS_H
+#ifndef VSS_BASE_SOFTWARE_PLAYERUTILS_H
+#define VSS_BASE_SOFTWARE_PLAYERUTILS_H
 
 #include "Packages/Packages.h"
 
@@ -25,4 +25,4 @@ namespace Behavior {
   };
 } // namespace Behavior
 
-#endif // VSS_UNIFICATION_PLAYERUTILS_H
+#endif // VSS_BASE_SOFTWARE_PLAYERUTILS_H

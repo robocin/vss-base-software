@@ -2,8 +2,8 @@
 // Created by jose-cruz on 19/07/2021.
 //
 
-#ifndef VSS_UNIFICATION_FIELD_H
-#define VSS_UNIFICATION_FIELD_H
+#ifndef VSS_BASE_SOFTWARE_FIELD_H
+#define VSS_BASE_SOFTWARE_FIELD_H
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "modernize-use-nodiscard"
@@ -173,4 +173,4 @@ constexpr Field Field::field(Field::Size size, bool isAttackingToRight) {
 
 #pragma clang diagnostic pop
 
-#endif // VSS_UNIFICATION_FIELD_H
+#endif // VSS_BASE_SOFTWARE_FIELD_H

@@ -2,8 +2,8 @@
 // Created by jose-cruz on 09/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_COMMUNICATIONBASE_H
-#define VSS_UNIFICATION_COMMUNICATIONBASE_H
+#ifndef VSS_BASE_SOFTWARE_COMMUNICATIONBASE_H
+#define VSS_BASE_SOFTWARE_COMMUNICATIONBASE_H
 
 #include <soccer-common/soccer-common.h>
 
@@ -21,4 +21,4 @@ namespace Factory {
       singleton_v<InheritanceFactory<CommunicationBase, QThreadPool*>>;
 }
 
-#endif // VSS_UNIFICATION_COMMUNICATIONBASE_H
+#endif // VSS_BASE_SOFTWARE_COMMUNICATIONBASE_H

@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_HALTDECISION_H
-#define VSS_UNIFICATION_HALTDECISION_H
+#ifndef VSS_BASE_SOFTWARE_HALTDECISION_H
+#define VSS_BASE_SOFTWARE_HALTDECISION_H
 
 #include "Modules/Decision/DecisionUtils/DecisionUtils.h"
 
@@ -23,4 +23,4 @@ class HaltDecision : public Decision::Extension {
   }
 };
 
-#endif // VSS_UNIFICATION_HALTDECISION_H
+#endif // VSS_BASE_SOFTWARE_HALTDECISION_H

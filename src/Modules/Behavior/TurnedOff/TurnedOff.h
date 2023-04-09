@@ -2,8 +2,8 @@
 // Created by jose-cruz on 06/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_TURNEDOFF_H
-#define VSS_UNIFICATION_TURNEDOFF_H
+#ifndef VSS_BASE_SOFTWARE_TURNEDOFF_H
+#define VSS_BASE_SOFTWARE_TURNEDOFF_H
 
 #include "Modules/Modules.h"
 
@@ -16,4 +16,4 @@ class TurnedOff : public BehaviorBase {
   void exec() override;
 };
 
-#endif // VSS_UNIFICATION_TURNEDOFF_H
+#endif // VSS_BASE_SOFTWARE_TURNEDOFF_H

@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_ENVIRONMENT_H
-#define VSS_UNIFICATION_ENVIRONMENT_H
+#ifndef VSS_BASE_SOFTWARE_ENVIRONMENT_H
+#define VSS_BASE_SOFTWARE_ENVIRONMENT_H
 
 #include <soccer-common/soccer-common.h>
 #include "Env/Env.h"
@@ -25,4 +25,4 @@ namespace Factory {
   inline static auto& environment = singleton_v<InheritanceFactory<Environment, QThreadPool*>>;
 }
 
-#endif // VSS_UNIFICATION_ENVIRONMENT_H
+#endif // VSS_BASE_SOFTWARE_ENVIRONMENT_H

@@ -2,8 +2,8 @@
 // Created by jose-cruz on 28/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_CUSTOMREF_H
-#define VSS_UNIFICATION_CUSTOMREF_H
+#ifndef VSS_BASE_SOFTWARE_CUSTOMREF_H
+#define VSS_BASE_SOFTWARE_CUSTOMREF_H
 
 #include "Modules/Modules.h"
 #include "Modules/Referee/RefereeUtils/RefereeUtils.h"
@@ -39,4 +39,4 @@ class CustomRef : public RefereeBase {
   void receiveIsYellow(bool isYellow);
 };
 
-#endif // VSS_UNIFICATION_CUSTOMREF_H
+#endif // VSS_BASE_SOFTWARE_CUSTOMREF_H

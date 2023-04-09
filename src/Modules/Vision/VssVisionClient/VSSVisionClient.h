@@ -2,8 +2,8 @@
 // Created by felipe on 16/05/2022.
 //
 
-#ifndef VSS_UNIFICATION_VSSVISIONCLIENT_H
-#define VSS_UNIFICATION_VSSVISIONCLIENT_H
+#ifndef VSS_BASE_SOFTWARE_VSSVISIONCLIENT_H
+#define VSS_BASE_SOFTWARE_VSSVISIONCLIENT_H
 
 #include <deque>
 #include <QUdpSocket>
@@ -78,4 +78,4 @@ class VSSVISIONClient : public VisionBase {
   void receiveTrackedDatagrams();
 };
 
-#endif // VSS_UNIFICATION_VSSVISIONCLIENT_H
+#endif // VSS_BASE_SOFTWARE_VSSVISIONCLIENT_H

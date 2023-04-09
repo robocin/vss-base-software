@@ -2,8 +2,8 @@
 // Created by jose-cruz on 09/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_FRAME_H
-#define VSS_UNIFICATION_FRAME_H
+#ifndef VSS_BASE_SOFTWARE_FRAME_H
+#define VSS_BASE_SOFTWARE_FRAME_H
 
 #include "Entities/Entities.h"
 
@@ -16,4 +16,4 @@ class Frame {
   CTOR(Frame, ball, allies, enemies);
 };
 
-#endif // VSS_UNIFICATION_FRAME_H
+#endif // VSS_BASE_SOFTWARE_FRAME_H

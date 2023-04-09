@@ -1,6 +1,6 @@
 
-#ifndef VSS_UNIFICATION_COMMBSTSERVICE_H
-#define VSS_UNIFICATION_COMMBSTSERVICE_H
+#ifndef VSS_BASE_SOFTWARE_COMMBSTSERVICE_H
+#define VSS_BASE_SOFTWARE_COMMBSTSERVICE_H
 
 #include "Modules/Communication/CommunicationBSt/CommBstService/CommBstEth/commbstEth.h"
 #include "communication/commbst.h"
@@ -25,4 +25,4 @@ class CommBstService {
 
 typedef Singleton<CommBstService> BstService;
 
-#endif // VSS_UNIFICATION_COMMBSTSERVICE_H
+#endif // VSS_BASE_SOFTWARE_COMMBSTSERVICE_H

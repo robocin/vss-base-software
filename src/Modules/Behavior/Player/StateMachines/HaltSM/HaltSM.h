@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_HALTSM_H
-#define VSS_UNIFICATION_HALTSM_H
+#ifndef VSS_BASE_SOFTWARE_HALTSM_H
+#define VSS_BASE_SOFTWARE_HALTSM_H
 
 #include "Modules/Behavior/Player/PlayerUtils/PlayerUtils.h"
 
@@ -14,4 +14,4 @@ class HaltSM : public Behavior::PlayerExtension {
   }
 };
 
-#endif // VSS_UNIFICATION_HALTSM_H
+#endif // VSS_BASE_SOFTWARE_HALTSM_H

@@ -2,8 +2,8 @@
 // Created by jose-cruz on 06/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_NAVIGATIONOUTPUT_H
-#define VSS_UNIFICATION_NAVIGATIONOUTPUT_H
+#ifndef VSS_BASE_SOFTWARE_NAVIGATIONOUTPUT_H
+#define VSS_BASE_SOFTWARE_NAVIGATIONOUTPUT_H
 
 #include <soccer-common/soccer-common.h>
 
@@ -24,4 +24,4 @@ namespace Navigation {
   };
 } // namespace Navigation
 
-#endif // VSS_UNIFICATION_NAVIGATIONOUTPUT_H
+#endif // VSS_BASE_SOFTWARE_NAVIGATIONOUTPUT_H

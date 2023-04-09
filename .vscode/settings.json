@@ -43,7 +43,7 @@
   "doxdocgen.c.triggerSequence": "/*!",
   "doxdocgen.c.firstLine": "/*!",
   "C/C++ Include Guard.Comment Style": "Line",
-  "C/C++ Include Guard.Prefix": "VSS_UNIFICATION_",
+  "C/C++ Include Guard.Prefix": "VSS_BASE_SOFTWARE_",
   "C/C++ Include Guard.Macro Type": "Filename",
   "C/C++ Include Guard.Remove Extension": false,
   "C/C++ Include Guard.Remove Pragma Once": false,

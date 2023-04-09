@@ -2,8 +2,8 @@
 // Created by jose-cruz on 08/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_FIRASIMCLIENT_H
-#define VSS_UNIFICATION_FIRASIMCLIENT_H
+#ifndef VSS_BASE_SOFTWARE_FIRASIMCLIENT_H
+#define VSS_BASE_SOFTWARE_FIRASIMCLIENT_H
 
 #include <deque>
 #include <QUdpSocket>
@@ -62,4 +62,4 @@ class FIRASimClient : public VisionBase {
   void receiveDatagram();
 };
 
-#endif // VSS_UNIFICATION_FIRASIMCLIENT_H
+#endif // VSS_BASE_SOFTWARE_FIRASIMCLIENT_H

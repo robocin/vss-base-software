@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_ENV_H
-#define VSS_UNIFICATION_ENV_H
+#ifndef VSS_BASE_SOFTWARE_ENV_H
+#define VSS_BASE_SOFTWARE_ENV_H
 
 #include <soccer-common/soccer-common.h>
 
@@ -40,4 +40,4 @@ struct Env {
   };
 };
 
-#endif // VSS_UNIFICATION_ENV_H
+#endif // VSS_BASE_SOFTWARE_ENV_H

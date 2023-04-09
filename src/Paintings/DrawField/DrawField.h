@@ -2,8 +2,8 @@
 // Created by jose-cruz on 09/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_DRAWFIELD_H
-#define VSS_UNIFICATION_DRAWFIELD_H
+#ifndef VSS_BASE_SOFTWARE_DRAWFIELD_H
+#define VSS_BASE_SOFTWARE_DRAWFIELD_H
 
 #include <soccer-common/soccer-common.h>
 #include "Field/Field.h"
@@ -19,4 +19,4 @@ class DrawField : public Painting {
   std::unique_ptr<Painting> clone() const override;
 };
 
-#endif // VSS_UNIFICATION_DRAWFIELD_H
+#endif // VSS_BASE_SOFTWARE_DRAWFIELD_H

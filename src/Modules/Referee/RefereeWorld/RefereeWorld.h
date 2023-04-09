@@ -2,8 +2,8 @@
 // Created by jose-cruz on 04/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_REFEREEWORLD_H
-#define VSS_UNIFICATION_REFEREEWORLD_H
+#ifndef VSS_BASE_SOFTWARE_REFEREEWORLD_H
+#define VSS_BASE_SOFTWARE_REFEREEWORLD_H
 
 #include <QUdpSocket>
 #include <QNetworkInterface>
@@ -50,4 +50,4 @@ class RefereeWorld : public RefereeBase {
   void receiveIsYellow(bool rcvIsYellow);
 };
 
-#endif // VSS_UNIFICATION_REFEREEWORLD_H
+#endif // VSS_BASE_SOFTWARE_REFEREEWORLD_H

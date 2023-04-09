@@ -2,8 +2,8 @@
 // Created by jose-cruz on 17/07/2021.
 //
 
-#ifndef VSS_UNIFICATION_BASESTATIONUTILS_H
-#define VSS_UNIFICATION_BASESTATIONUTILS_H
+#ifndef VSS_BASE_SOFTWARE_BASESTATIONUTILS_H
+#define VSS_BASE_SOFTWARE_BASESTATIONUTILS_H
 
 #include "Packages/Packages.h"
 #include "communication/commbst.h"
@@ -16,4 +16,4 @@ namespace BaseStation {
   }
 } // namespace BaseStation
 
-#endif // VSS_UNIFICATION_BASESTATIONUTILS_H
+#endif // VSS_BASE_SOFTWARE_BASESTATIONUTILS_H

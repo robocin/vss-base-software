@@ -2,8 +2,8 @@
 // Created by jose-cruz on 06/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_DEFAULTPLANNING_H
-#define VSS_UNIFICATION_DEFAULTPLANNING_H
+#ifndef VSS_BASE_SOFTWARE_DEFAULTPLANNING_H
+#define VSS_BASE_SOFTWARE_DEFAULTPLANNING_H
 
 #include "Modules/Modules.h"
 
@@ -34,4 +34,4 @@ class DefaultPlanning : public PlanningBase {
   void receiveBehavior(const Behavior::Output& rcvBehavior);
 };
 
-#endif // VSS_UNIFICATION_DEFAULTPLANNING_H
+#endif // VSS_BASE_SOFTWARE_DEFAULTPLANNING_H

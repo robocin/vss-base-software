@@ -2,8 +2,8 @@
 // Created by jose-cruz on 08/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_PROTOBUFS_H
-#define VSS_UNIFICATION_PROTOBUFS_H
+#ifndef VSS_BASE_SOFTWARE_PROTOBUFS_H
+#define VSS_BASE_SOFTWARE_PROTOBUFS_H
 
 #if __has_include("pb/command.pb.h")
   #include "pb/command.pb.h"
@@ -71,4 +71,4 @@
   #warning "pb/ssl_vision_wrapper_tracked.pb.h" was not found.
 #endif
 
-#endif // VSS_UNIFICATION_PROTOBUFS_H
+#endif // VSS_BASE_SOFTWARE_PROTOBUFS_H

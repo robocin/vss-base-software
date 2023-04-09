@@ -2,8 +2,8 @@
 // Created by jose-cruz on 13/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_BEHAVIORBASE_H
-#define VSS_UNIFICATION_BEHAVIORBASE_H
+#ifndef VSS_BASE_SOFTWARE_BEHAVIORBASE_H
+#define VSS_BASE_SOFTWARE_BEHAVIORBASE_H
 
 #include "Packages/Packages.h"
 
@@ -20,4 +20,4 @@ namespace Factory {
   inline static auto& behavior = singleton_v<InheritanceFactory<BehaviorBase, int, QThreadPool*>>;
 }
 
-#endif // VSS_UNIFICATION_BEHAVIORBASE_H
+#endif // VSS_BASE_SOFTWARE_BEHAVIORBASE_H

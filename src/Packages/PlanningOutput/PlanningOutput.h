@@ -2,8 +2,8 @@
 // Created by jose-cruz on 06/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_PLANNINGOUTPUT_H
-#define VSS_UNIFICATION_PLANNINGOUTPUT_H
+#ifndef VSS_BASE_SOFTWARE_PLANNINGOUTPUT_H
+#define VSS_BASE_SOFTWARE_PLANNINGOUTPUT_H
 
 #include "Packages/RobotCommand/RobotCommand.h"
 #include "Packages/NavigationOutput/NavigationOutput.h"
@@ -17,4 +17,4 @@ namespace Planning {
   using Output = std::variant<OutputType::Command, OutputType::Navigation>;
 } // namespace Planning
 
-#endif // VSS_UNIFICATION_PLANNINGOUTPUT_H
+#endif // VSS_BASE_SOFTWARE_PLANNINGOUTPUT_H

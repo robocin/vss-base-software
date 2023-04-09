@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_GOTOPOSITIONSM_H
-#define VSS_UNIFICATION_GOTOPOSITIONSM_H
+#ifndef VSS_BASE_SOFTWARE_GOTOPOSITIONSM_H
+#define VSS_BASE_SOFTWARE_GOTOPOSITIONSM_H
 
 #include "Modules/Behavior/Player/PlayerUtils/PlayerUtils.h"
 
@@ -20,4 +20,4 @@ class GoToPositionSM : public Behavior::PlayerExtension {
   }
 };
 
-#endif // VSS_UNIFICATION_GOTOPOSITIONSM_H
+#endif // VSS_BASE_SOFTWARE_GOTOPOSITIONSM_H

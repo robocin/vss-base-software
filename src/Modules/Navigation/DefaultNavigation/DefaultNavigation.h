@@ -2,8 +2,8 @@
 // Created by jose-cruz on 06/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_DEFAULTNAVIGATION_H
-#define VSS_UNIFICATION_DEFAULTNAVIGATION_H
+#ifndef VSS_BASE_SOFTWARE_DEFAULTNAVIGATION_H
+#define VSS_BASE_SOFTWARE_DEFAULTNAVIGATION_H
 
 #include "Modules/Modules.h"
 
@@ -62,4 +62,4 @@ class DefaultNavigation : public NavigationBase {
   void receiveFrameAndRobot(const Frame& frame, const Robot& robot);
 };
 
-#endif // VSS_UNIFICATION_DEFAULTNAVIGATION_H
+#endif // VSS_BASE_SOFTWARE_DEFAULTNAVIGATION_H

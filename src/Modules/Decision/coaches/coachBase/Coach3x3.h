@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_VSSCOACH3X3_H
-#define VSS_UNIFICATION_VSSCOACH3X3_H
+#ifndef VSS_BASE_SOFTWARE_VSSCOACH3X3_H
+#define VSS_BASE_SOFTWARE_VSSCOACH3X3_H
 
 #include <QUdpSocket>
 #include <QNetworkInterface>
@@ -75,4 +75,4 @@ class VSSCOACH3x3 : public DecisionBase,
   void sendTeleport(const QByteArray& datagram);
 };
 
-#endif // VSS_UNIFICATION_VSSCOACH3X3_H
+#endif // VSS_BASE_SOFTWARE_VSSCOACH3X3_H

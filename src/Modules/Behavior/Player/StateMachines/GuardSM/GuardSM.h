@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_GUARDSM_H
-#define VSS_UNIFICATION_GUARDSM_H
+#ifndef VSS_BASE_SOFTWARE_GUARDSM_H
+#define VSS_BASE_SOFTWARE_GUARDSM_H
 
 #include "Modules/Behavior/Player/PlayerUtils/PlayerUtils.h"
 
@@ -37,4 +37,4 @@ class GuardSM : public Behavior::PlayerExtension {
   }
 };
 
-#endif // VSS_UNIFICATION_GUARDSM_H
+#endif // VSS_BASE_SOFTWARE_GUARDSM_H

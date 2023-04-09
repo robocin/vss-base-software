@@ -2,8 +2,8 @@
 // Created by jose-cruz on 03/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_REFEREEOUTPUT_H
-#define VSS_UNIFICATION_REFEREEOUTPUT_H
+#ifndef VSS_BASE_SOFTWARE_REFEREEOUTPUT_H
+#define VSS_BASE_SOFTWARE_REFEREEOUTPUT_H
 
 #include <soccer-common/soccer-common.h>
 #include "Field/Field.h"
@@ -62,4 +62,4 @@ namespace Referee {
   };
 } // namespace Referee
 
-#endif // VSS_UNIFICATION_REFEREEOUTPUT_H
+#endif // VSS_BASE_SOFTWARE_REFEREEOUTPUT_H

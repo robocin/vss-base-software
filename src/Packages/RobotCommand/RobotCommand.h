@@ -2,8 +2,8 @@
 // Created by jose-cruz on 13/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_ROBOTCOMMAND_H
-#define VSS_UNIFICATION_ROBOTCOMMAND_H
+#ifndef VSS_BASE_SOFTWARE_ROBOTCOMMAND_H
+#define VSS_BASE_SOFTWARE_ROBOTCOMMAND_H
 
 #include <soccer-common/soccer-common.h>
 
@@ -42,4 +42,4 @@ class RobotCommand {
   CTOR(RobotCommand, motion);
 };
 
-#endif // VSS_UNIFICATION_ROBOTCOMMAND_H
+#endif // VSS_BASE_SOFTWARE_ROBOTCOMMAND_H

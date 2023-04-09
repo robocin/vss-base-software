@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_GAMESTATES_H
-#define VSS_UNIFICATION_GAMESTATES_H
+#ifndef VSS_BASE_SOFTWARE_GAMESTATES_H
+#define VSS_BASE_SOFTWARE_GAMESTATES_H
 
 #include "GameRunningDecision/GameRunningDecision.h"
 #include "HaltDecision/HaltDecision.h"
@@ -8,4 +8,4 @@
 #include "PrepareToKickoffDecision/PrepareToKickoffDecision.h"
 #include "PrepareToPenaltyDecision/PrepareToPenaltyDecision.h"
 
-#endif // VSS_UNIFICATION_GAMESTATES_H
+#endif // VSS_BASE_SOFTWARE_GAMESTATES_H

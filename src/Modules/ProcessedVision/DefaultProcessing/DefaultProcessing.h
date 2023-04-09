@@ -2,8 +2,8 @@
 // Created by jose-cruz on 12/06/2021.
 //
 
-#ifndef VSS_UNIFICATION_DEFAULTPROCESSING_H
-#define VSS_UNIFICATION_DEFAULTPROCESSING_H
+#ifndef VSS_BASE_SOFTWARE_DEFAULTPROCESSING_H
+#define VSS_BASE_SOFTWARE_DEFAULTPROCESSING_H
 
 #include "Modules/Modules.h"
 
@@ -39,4 +39,4 @@ class DefaultProcessing : public ProcessedVisionBase {
   std::optional<Frame> operator()(const Vision::OutputType::Tracked& tracked);
 };
 
-#endif // VSS_UNIFICATION_DEFAULTPROCESSING_H
+#endif // VSS_BASE_SOFTWARE_DEFAULTPROCESSING_H

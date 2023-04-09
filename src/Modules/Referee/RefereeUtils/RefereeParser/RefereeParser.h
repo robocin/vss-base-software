@@ -2,8 +2,8 @@
 // Created by jose-cruz on 31/07/2021.
 //
 
-#ifndef VSS_UNIFICATION_REFEREEPARSER_H
-#define VSS_UNIFICATION_REFEREEPARSER_H
+#ifndef VSS_BASE_SOFTWARE_REFEREEPARSER_H
+#define VSS_BASE_SOFTWARE_REFEREEPARSER_H
 
 #include <protobufs/protobufs.h>
 #include "Packages/RefereeOutput/RefereeOutput.h"
@@ -78,4 +78,4 @@ namespace Referee {
   }; // namespace Referee
 } // namespace Referee
 
-#endif // VSS_UNIFICATION_REFEREEPARSER_H
+#endif // VSS_BASE_SOFTWARE_REFEREEPARSER_H

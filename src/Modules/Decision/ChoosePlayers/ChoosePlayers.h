@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_CHOOSEPLAYERS_H
-#define VSS_UNIFICATION_CHOOSEPLAYERS_H
+#ifndef VSS_BASE_SOFTWARE_CHOOSEPLAYERS_H
+#define VSS_BASE_SOFTWARE_CHOOSEPLAYERS_H
 
 #include "Modules/Modules.h"
 
@@ -28,4 +28,4 @@ class ChoosePlayers : public ModuleExtension {
   takeAttacker(Robots<Robot>& allies, Robots<Robot>& enemies, Ball ball) const;
 };
 
-#endif // VSS_UNIFICATION_CHOOSEPLAYERS_H
+#endif // VSS_BASE_SOFTWARE_CHOOSEPLAYERS_H

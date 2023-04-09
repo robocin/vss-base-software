@@ -2,8 +2,8 @@
 // Created by jose-cruz on 09/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_FIRASIMCOMMUNICATION_H
-#define VSS_UNIFICATION_FIRASIMCOMMUNICATION_H
+#ifndef VSS_BASE_SOFTWARE_FIRASIMCOMMUNICATION_H
+#define VSS_BASE_SOFTWARE_FIRASIMCOMMUNICATION_H
 
 #include <QUdpSocket>
 #include <QNetworkInterface>
@@ -59,4 +59,4 @@ class FIRASimCommunication : public CommunicationBase {
   static std::optional<std::tuple<bool, int, Point>> isRobotReplacement(const Shared& obj);
 };
 
-#endif // VSS_UNIFICATION_FIRASIMCOMMUNICATION_H
+#endif // VSS_BASE_SOFTWARE_FIRASIMCOMMUNICATION_H

@@ -2,8 +2,8 @@
 // Created by jose-cruz on 09/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_PACKAGES_H
-#define VSS_UNIFICATION_PACKAGES_H
+#ifndef VSS_BASE_SOFTWARE_PACKAGES_H
+#define VSS_BASE_SOFTWARE_PACKAGES_H
 
 #include "Frame/Frame.h"
 #include "RawFrame/RawFrame.h"
@@ -22,4 +22,4 @@
 
 #include "World/World.h"
 
-#endif // VSS_UNIFICATION_PACKAGES_H
+#endif // VSS_BASE_SOFTWARE_PACKAGES_H

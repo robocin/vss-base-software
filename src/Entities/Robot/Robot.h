@@ -2,8 +2,8 @@
 // Created by jose-cruz on 20/07/2021.
 //
 
-#ifndef VSS_UNIFICATION_ROBOT_H
-#define VSS_UNIFICATION_ROBOT_H
+#ifndef VSS_BASE_SOFTWARE_ROBOT_H
+#define VSS_BASE_SOFTWARE_ROBOT_H
 
 #include <soccer-common/soccer-common.h>
 #include "Field/Field.h"
@@ -41,4 +41,4 @@ class Robot : public Common::Robot<Point> {
   real_t m_angularVelocity;
 };
 
-#endif // VSS_UNIFICATION_ROBOT_H
+#endif // VSS_BASE_SOFTWARE_ROBOT_H

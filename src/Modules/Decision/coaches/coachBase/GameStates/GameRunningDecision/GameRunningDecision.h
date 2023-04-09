@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_GAMERUNNINGDECISION_H
-#define VSS_UNIFICATION_GAMERUNNINGDECISION_H
+#ifndef VSS_BASE_SOFTWARE_GAMERUNNINGDECISION_H
+#define VSS_BASE_SOFTWARE_GAMERUNNINGDECISION_H
 
 #include "Modules/Decision/DecisionUtils/DecisionUtils.h"
 #include "Modules/Decision/ChoosePlayers/ChoosePlayers.h"
@@ -66,4 +66,4 @@ class GameRunningDecision : public Decision::Extension {
   };
 };
 
-#endif // VSS_UNIFICATION_GAMERUNNINGDECISION_H
+#endif // VSS_BASE_SOFTWARE_GAMERUNNINGDECISION_H

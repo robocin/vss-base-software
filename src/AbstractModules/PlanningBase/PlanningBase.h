@@ -2,8 +2,8 @@
 // Created by jose-cruz on 12/09/2021.
 //
 
-#ifndef VSS_UNIFICATION_PLANNINGBASE_H
-#define VSS_UNIFICATION_PLANNINGBASE_H
+#ifndef VSS_BASE_SOFTWARE_PLANNINGBASE_H
+#define VSS_BASE_SOFTWARE_PLANNINGBASE_H
 
 #include "Packages/Packages.h"
 
@@ -21,4 +21,4 @@ namespace Factory {
   inline static auto& planning = singleton_v<InheritanceFactory<PlanningBase, int, QThreadPool*>>;
 }
 
-#endif // VSS_UNIFICATION_PLANNINGBASE_H
+#endif // VSS_BASE_SOFTWARE_PLANNINGBASE_H

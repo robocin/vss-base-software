@@ -2,8 +2,8 @@
 // Created by jose-cruz on 12/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_VISIONOUTPUT_H
-#define VSS_UNIFICATION_VISIONOUTPUT_H
+#ifndef VSS_BASE_SOFTWARE_VISIONOUTPUT_H
+#define VSS_BASE_SOFTWARE_VISIONOUTPUT_H
 
 #include "Packages/RawFrame/RawFrame.h"
 #include "Packages/Frame/Frame.h"
@@ -24,4 +24,4 @@ namespace Vision {
   using Output = std::variant<OutputType::Raw, OutputType::Tracked>;
 } // namespace Vision
 
-#endif // VSS_UNIFICATION_VISIONOUTPUT_H
+#endif // VSS_BASE_SOFTWARE_VISIONOUTPUT_H

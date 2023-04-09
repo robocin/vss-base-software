@@ -2,8 +2,8 @@
 // Created by jose-cruz on 20/07/2021.
 //
 
-#ifndef VSS_UNIFICATION_SIMULATIONUTILS_H
-#define VSS_UNIFICATION_SIMULATIONUTILS_H
+#ifndef VSS_BASE_SOFTWARE_SIMULATIONUTILS_H
+#define VSS_BASE_SOFTWARE_SIMULATIONUTILS_H
 
 #include <protobufs/protobufs.h>
 #include "Packages/Packages.h"
@@ -100,4 +100,4 @@ namespace Simulation {
   }
 } // namespace Simulation
 
-#endif // VSS_UNIFICATION_SIMULATIONUTILS_H
+#endif // VSS_BASE_SOFTWARE_SIMULATIONUTILS_H

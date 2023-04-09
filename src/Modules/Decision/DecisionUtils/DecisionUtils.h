@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_DECISIONUTILS_H
-#define VSS_UNIFICATION_DECISIONUTILS_H
+#ifndef VSS_BASE_SOFTWARE_DECISIONUTILS_H
+#define VSS_BASE_SOFTWARE_DECISIONUTILS_H
 
 #include <protobufs/protobufs.h>
 
@@ -271,4 +271,4 @@ namespace Decision {
   }
 } // namespace Decision
 
-#endif // VSS_UNIFICATION_DECISIONUTILS_H
+#endif // VSS_BASE_SOFTWARE_DECISIONUTILS_H

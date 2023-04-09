@@ -5,8 +5,8 @@
  * robots using the nRF24L01+ radios.
  *
  */
-#ifndef VSS_UNIFICATION_COMMBST_H
-#define VSS_UNIFICATION_COMMBST_H
+#ifndef VSS_BASE_SOFTWARE_COMMBST_H
+#define VSS_BASE_SOFTWARE_COMMBST_H
 
 #include <iostream>
 #include <cstring>
@@ -114,4 +114,4 @@ class CommBst {
   static BStConfigPacket makeConfigBst(robocin::comm::NetworkType category);
 };
 
-#endif // VSS_UNIFICATION_COMMBST_H
+#endif // VSS_BASE_SOFTWARE_COMMBST_H

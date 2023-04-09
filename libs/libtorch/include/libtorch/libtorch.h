@@ -2,8 +2,8 @@
 // Created by jose-cruz on 30/07/2021.
 //
 
-#ifndef VSS_UNIFICATION_LIBTORCH_H
-#define VSS_UNIFICATION_LIBTORCH_H
+#ifndef VSS_BASE_SOFTWARE_LIBTORCH_H
+#define VSS_BASE_SOFTWARE_LIBTORCH_H
 
 // fixes the including error between LibTorch and Qt libraries
 #pragma push_macro("slots")
@@ -23,4 +23,4 @@
 
 ***************************************************************************************************/
 
-#endif // VSS_UNIFICATION_LIBTORCH_H
+#endif // VSS_BASE_SOFTWARE_LIBTORCH_H

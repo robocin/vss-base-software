@@ -33,24 +33,24 @@ RUN python3 setup.py --essentials
 
 RUN python3 setup.py --install libtorch
 
-COPY . /vss-unification
+COPY . /vss-base-software
 
-WORKDIR /vss-unification
+WORKDIR /vss-base-software
 
 RUN [ -d ./build ] && rm -rf ./build || echo "Directory build does not exist"
 
 RUN mkdir build
 
-WORKDIR /vss-unification/build
+WORKDIR /vss-base-software/build
 
 RUN cmake ..
 
 RUN make -j8
 
-WORKDIR /vss-unification/bin
+WORKDIR /vss-base-software/bin
 
-RUN rm -rf /vss-unification/.git
+RUN rm -rf /vss-base-software/.git
 
-RUN rm -rf /vss-unification/src
+RUN rm -rf /vss-base-software/src
 
-CMD ["./vss-unification", "-platform", "minimal", "-no-gui", "-running"]
+CMD ["./vss-base-software", "-platform", "minimal", "-no-gui", "-running"]

@@ -2,8 +2,8 @@
 // Created by jose-cruz on 04/07/2021.
 //
 
-#ifndef VSS_UNIFICATION_WORLD_H
-#define VSS_UNIFICATION_WORLD_H
+#ifndef VSS_BASE_SOFTWARE_WORLD_H
+#define VSS_BASE_SOFTWARE_WORLD_H
 
 #include "Field/Field.h"
 #include "Packages/Frame/Frame.h"
@@ -37,4 +37,4 @@ class PlayerWorld : public World {
   }
 };
 
-#endif // VSS_UNIFICATION_WORLD_H
+#endif // VSS_BASE_SOFTWARE_WORLD_H

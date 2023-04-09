@@ -2,8 +2,8 @@
 // Created by jose-cruz on 08/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_MODULES_H
-#define VSS_UNIFICATION_MODULES_H
+#ifndef VSS_BASE_SOFTWARE_MODULES_H
+#define VSS_BASE_SOFTWARE_MODULES_H
 
 #include "Utils/Utils.h"
 #include "Packages/Packages.h"
@@ -38,4 +38,4 @@ class Modules : public ModulesPrivate {
   const QVector<NavigationBase*>& navigation() const;
 };
 
-#endif // VSS_UNIFICATION_MODULES_H
+#endif // VSS_BASE_SOFTWARE_MODULES_H

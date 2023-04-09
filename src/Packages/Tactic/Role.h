@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_ROLE_H
-#define VSS_UNIFICATION_ROLE_H
+#ifndef VSS_BASE_SOFTWARE_ROLE_H
+#define VSS_BASE_SOFTWARE_ROLE_H
 
 #include <cstdint>
 
@@ -15,4 +15,4 @@ namespace TacticType {
   };
 } // namespace TacticType
 
-#endif // VSS_UNIFICATION_ROLE_H
+#endif // VSS_BASE_SOFTWARE_ROLE_H

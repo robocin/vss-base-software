@@ -2,8 +2,8 @@
 // Created by jose-cruz on 08/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_VISIONBASE_H
-#define VSS_UNIFICATION_VISIONBASE_H
+#ifndef VSS_BASE_SOFTWARE_VISIONBASE_H
+#define VSS_BASE_SOFTWARE_VISIONBASE_H
 
 #include "Packages/Packages.h"
 
@@ -23,4 +23,4 @@ namespace Factory {
   inline static auto& vision = singleton_v<InheritanceFactory<VisionBase, QThreadPool*>>;
 }
 
-#endif // VSS_UNIFICATION_VISIONBASE_H
+#endif // VSS_BASE_SOFTWARE_VISIONBASE_H

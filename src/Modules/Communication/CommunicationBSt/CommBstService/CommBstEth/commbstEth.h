@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_COMMBST_ETH_H
-#define VSS_UNIFICATION_COMMBST_ETH_H
+#ifndef VSS_BASE_SOFTWARE_COMMBST_ETH_H
+#define VSS_BASE_SOFTWARE_COMMBST_ETH_H
 
 #include "communication/commbst.h"
 #include <QUdpSocket>
@@ -30,4 +30,4 @@ class CommBstEth {
   quint16 _port;
 };
 
-#endif // VSS_UNIFICATION_COMMBST_ETH_H
+#endif // VSS_BASE_SOFTWARE_COMMBST_ETH_H

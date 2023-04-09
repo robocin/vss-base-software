@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_DEBUG_H
-#define VSS_UNIFICATION_DEBUG_H
+#ifndef VSS_BASE_SOFTWARE_DEBUG_H
+#define VSS_BASE_SOFTWARE_DEBUG_H
 
 #include "Modules/Modules.h"
 
@@ -47,4 +47,4 @@ class Debug : public BehaviorBase {
   void receiveFrameAndRobot(const Frame& rcvdFrame, const Robot& rcvdRobot);
 };
 
-#endif // VSS_UNIFICATION_DEBUG_H
+#endif // VSS_BASE_SOFTWARE_DEBUG_H

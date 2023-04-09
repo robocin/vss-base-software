@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_TACTIC_H
-#define VSS_UNIFICATION_TACTIC_H
+#ifndef VSS_BASE_SOFTWARE_TACTIC_H
+#define VSS_BASE_SOFTWARE_TACTIC_H
 
 #include "Role.h"
 
@@ -34,4 +34,4 @@ using Tactic = std::variant<TacticType::Halt,         //
                             TacticType::GoToPosition, //
                             TacticType::Guard>;
 
-#endif // VSS_UNIFICATION_TACTIC_H
+#endif // VSS_BASE_SOFTWARE_TACTIC_H

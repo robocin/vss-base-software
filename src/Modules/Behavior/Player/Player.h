@@ -2,8 +2,8 @@
 // Created by jose-cruz on 06/08/2021.
 //
 
-#ifndef VSS_UNIFICATION_PLAYER_H
-#define VSS_UNIFICATION_PLAYER_H
+#ifndef VSS_BASE_SOFTWARE_PLAYER_H
+#define VSS_BASE_SOFTWARE_PLAYER_H
 
 #include "Modules/Modules.h"
 
@@ -40,4 +40,4 @@ class Player : public BehaviorBase, public overloaded_visitor_t<HaltSM, GoToPosi
   void receiveDecision(const Decision::Play& rcvdPlay, const Decision::Output& rcvdPlays);
 };
 
-#endif // VSS_UNIFICATION_PLAYER_H
+#endif // VSS_BASE_SOFTWARE_PLAYER_H

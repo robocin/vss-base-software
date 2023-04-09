@@ -1,5 +1,5 @@
-#ifndef VSS_UNIFICATION_DRAWFRAME_H
-#define VSS_UNIFICATION_DRAWFRAME_H
+#ifndef VSS_BASE_SOFTWARE_DRAWFRAME_H
+#define VSS_BASE_SOFTWARE_DRAWFRAME_H
 
 #include "Packages/Packages.h"
 
@@ -158,4 +158,4 @@ class DrawFrame : public Painting {
   }
 };
 
-#endif // VSS_UNIFICATION_DRAWFRAME_H
+#endif // VSS_BASE_SOFTWARE_DRAWFRAME_H

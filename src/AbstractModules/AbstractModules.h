@@ -2,8 +2,8 @@
 // Created by jose-cruz on 08/02/2021.
 //
 
-#ifndef VSS_UNIFICATION_ABSTRACTMODULES_H
-#define VSS_UNIFICATION_ABSTRACTMODULES_H
+#ifndef VSS_BASE_SOFTWARE_ABSTRACTMODULES_H
+#define VSS_BASE_SOFTWARE_ABSTRACTMODULES_H
 
 #include "Environment/Environment.h"
 
@@ -16,4 +16,4 @@
 #include "NavigationBase/NavigationBase.h"
 #include "CommunicationBase/CommunicationBase.h"
 
-#endif // VSS_UNIFICATION_ABSTRACTMODULES_H
+#endif // VSS_BASE_SOFTWARE_ABSTRACTMODULES_H
