@@ -48,8 +48,9 @@ git submodule update --init --recursive
 
 ```
 cd /path/to/repository/
-git clone https://github.com/robocin/ssl-unification.git
-cd ssl-unification
+git clone git@github.com:robocin/vss-base-software.git
+cd vss-base-software
+git submodule update --init --recursive
 ```
 
 Create a build directory within the project (this is ignored by .gitignore):
