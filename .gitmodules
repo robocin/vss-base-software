@@ -1,0 +1,9 @@
+[submodule "scripts/ubuntu"]
+	path = scripts/ubuntu
+	url = https://github.com/robocin/scripts-ubuntu-common.git
+[submodule "cmake"]
+	path = cmake
+	url = https://github.com/robocin/cmake-common.git
+[submodule "libs/soccer-common"]
+	path = libs/soccer-common
+	url = https://github.com/robocin/soccer-common.git

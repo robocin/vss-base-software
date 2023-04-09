@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libs/soccer-common" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libs/soccer-common/cmake" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libs/soccer-common/libs/magic_enum" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/libs/soccer-common/scripts/ubuntu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scripts/ubuntu" vcs="Git" />
+  </component>
+</project>
