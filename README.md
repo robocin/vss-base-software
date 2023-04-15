@@ -73,10 +73,5 @@ make -j$(grep -c ^processor /proc/cpuinfo)
 ```
 
 The executable will be located on the  `bin`  directory.
-
-### How to Contribute
-
-It is recommended to use the [CLion](https://www.jetbrains.com/clion/download/) IDE;
-
 ---
 > 2021, José Cruz

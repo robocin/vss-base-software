@@ -55,17 +55,10 @@ class VSSCOACH3x3 : public DecisionBase,
   void init(const Modules* modules) override;
   void update() override;
   void exec() override;
-  void debug();
   void receiveIsYellow(bool isYellow);
   void receiveFrame(const Frame& frame);
   void receiveField(const Field& field);
   void receiveReferee(const Referee::Output& referee);
-  QPolygonF area0;
-  QPolygonF area1;
-  QPolygonF area2;
-  QPolygonF area3;
-  QPolygonF area4;
-  std::vector<QPolygonF> areas;
 
  private:
   void setupTeleporter(bool enabled);

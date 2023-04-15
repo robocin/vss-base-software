@@ -65,51 +65,6 @@ void VSSCOACH3x3::update() {
   }
   if (auto field = shared->field.get_optional_and_reset()) {
     world.emplace_field(*field);
-    const float attackDirection = static_cast<float>(world.field().attackDirection().x());
-
-    area0 = {
-        field->allyPenaltyAreaCornerTop(),
-        field->allyPenaltyAreaGoalCornerTop(),
-        QPointF((field->min().x() * attackDirection), -field->min().y()),
-        field->topCenter(),
-        field->allyPenaltyAreaCornerTop(),
-    };
-    area1 = {
-        field->allyPenaltyAreaCornerBottom(),
-        field->bottomCenter(),
-        field->isAttackingToRight() ?
-            field->min() :
-            QPointF(field->max().x(), (field->max().y() * attackDirection)),
-        field->allyPenaltyAreaGoalCornerBottom(),
-        field->allyPenaltyAreaCornerBottom(),
-    };
-    area2 = {field->allyPenaltyAreaCornerTop(),
-             field->topCenter(),
-             field->enemyPenaltyAreaCornerTop(),
-             field->enemyPenaltyAreaCornerBottom(),
-             field->bottomCenter(),
-             field->allyPenaltyAreaCornerBottom(),
-             field->allyPenaltyAreaCornerTop()};
-
-    area3 = {field->enemyPenaltyAreaCornerTop(),
-             field->topCenter(),
-             field->isAttackingToRight() ?
-                 field->max() :
-                 QPointF((field->min().x() * -attackDirection), -field->min().y()),
-             field->enemyPenaltyAreaGoalCornerTop(),
-             field->enemyPenaltyAreaCornerTop()};
-
-    area4 = {field->enemyPenaltyAreaCornerBottom(),
-             field->bottomCenter(),
-             QPointF((field->max().x() * attackDirection), -field->max().y()),
-             field->enemyPenaltyAreaGoalCornerBottom(),
-             field->enemyPenaltyAreaCornerBottom()};
-
-    areas.push_back(area0);
-    areas.push_back(area1);
-    areas.push_back(area2);
-    areas.push_back(area3);
-    areas.push_back(area4);
   }
   if (auto referee = shared->referee.get_optional_and_reset()) {
     world.emplace_referee(*referee);
@@ -119,10 +74,6 @@ void VSSCOACH3x3::update() {
 void VSSCOACH3x3::exec() {
   if (!world.has_world()) {
     return;
-  }
-
-  if (args.debug) {
-    debug();
   }
 
   auto output = std::visit(*this, world.referee().state());
@@ -136,31 +87,6 @@ void VSSCOACH3x3::exec() {
   }
 }
 
-void VSSCOACH3x3::debug() {
-  std::vector<Qt::GlobalColor> colors;
-
-  colors.push_back(Qt::red);
-  colors.push_back(Qt::green);
-  colors.push_back(Qt::blue);
-  colors.push_back(Qt::black);
-  colors.push_back(Qt::yellow);
-
-  for (int i = 0; i < (int) areas.size(); i++) {
-    // verify if the ball is in the area
-    if (areas[i].containsPoint(world.frame().ball().position(), Qt::OddEvenFill)) {
-      colors[i] = Qt::green;
-      break;
-    }
-  }
-
-  paintKey.draw([this, colors = colors](GameVisualizerPainter2D* f) {
-    f->drawPolygon(area0, colors[0], 5);
-    f->drawPolygon(area1, colors[1], 5);
-    f->drawPolygon(area3, colors[3], 5);
-    f->drawPolygon(area4, colors[4], 5);
-    f->drawPolygon(area2, colors[2], 5);
-  });
-}
 void VSSCOACH3x3::receiveIsYellow(bool isYellow) {
   shared->hasIsYellow = isYellow;
 }
