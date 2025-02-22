@@ -105,7 +105,11 @@ def essentials_command():
         run_multiple_scripts(essentials_file.read().splitlines())
 
 
+def install_protobuf():
+    run("bash protobuf.sh")
+
 def install_command(scripts: List[str]):
+    install_protobuf()
     run_multiple_scripts(scripts)
 
 

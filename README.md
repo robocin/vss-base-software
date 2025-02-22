@@ -33,7 +33,7 @@ git submodule update --init --recursive
     - _Some dependencies require Qt;_
     - _Qt provides several libraries that facilitate the development of the interface, in addition to powerful classes,
       namespaces, macros and more;_
-- [Google Protobuf](https://developers.google.com/protocol-buffers);
+- [Google Protobuf 3.7.1](https://github.com/protocolbuffers/protobuf/releases/tag/v3.7.1);
     - Protocol buffers are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured
       data;
 - OpenGL;

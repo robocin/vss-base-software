@@ -101,3 +101,7 @@ CTestTestfile.cmake
 _deps
 CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
+
+# auto generated files
+**/deps
+**/timestamp
