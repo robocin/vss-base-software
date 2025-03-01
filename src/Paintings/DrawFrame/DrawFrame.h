@@ -31,6 +31,12 @@ class DrawFrame : public Painting {
         pt = Geometry2D::rotateCCW(pt, angle());
       }
 
+      QPolygonF secondSecondaryTag(
+          QRectF(-AXIS / 2 + 6 * eps, -AXIS / 12 + eps, 4 * eps, 4.5 * eps));
+      for (auto& pt : secondSecondaryTag) {
+        pt = Geometry2D::rotateCCW(pt, angle());
+      }
+
       f->drawFilledPolygon(body.translated(position()), Color::Black);
       f->drawFilledPolygon(primaryTag.translated(position()), teamColor());
       {
@@ -40,12 +46,38 @@ class DrawFrame : public Painting {
                                               Color::Magenta,
                                               Color::LightBlue,
                                               Color::Purple};
-        if (static_cast<size_t>(id()) < colorById.size()) {
-          color = colorById[id()];
+        size_t index = static_cast<size_t>(id()) / 3;
+        if (index < 4) {
+          color = colorById[index];
+        } else {
+          color = colorById[4];
         }
         f->drawFilledPolygon(secondaryTag.translated(position()), color);
       }
+      {
+        QColor color = Color::Black;
+        static constexpr std::array colorById{Color::Green,
+                                              Color::Magenta,
+                                              Color::LightBlue,
+                                              Color::Red,
+                                              Color::Magenta,
+                                              Color::LightBlue,
+                                              Color::Red,
+                                              Color::Green,
+                                              Color::LightBlue,
+                                              Color::Red,
+                                              Color::Green,
+                                              Color::Magenta};
+        if (static_cast<size_t>(id()) < colorById.size()) {
+          color = colorById[id()];
+        }
+        f->drawFilledPolygon(secondSecondaryTag.translated(position()), color);
+      }
       f->drawFilledCircle(position(), AXIS / 4, Color::Black);
+      f->drawLine(position(),
+                  secondSecondaryTag.translated(position())[1],
+                  Color::Black,
+                  AXIS / 10);
       f->drawText(QString::number(id()), position(), AXIS / 2, Color::White);
     }
   };
