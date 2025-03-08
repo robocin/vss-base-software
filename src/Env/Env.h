@@ -33,11 +33,7 @@ Every environment parameter must be defined in this file, with the following rul
 */
 
 struct Env {
-  struct Robot {
-    static inline Parameters::Atomic<bool> SEND_PWM = true;
-    static inline Parameters::Atomic<bool> SEND_PWM_CALIBRATION_PRINTS = false;
-    static inline Parameters::Atomic<double> WHEEL_RADIUS = 0.026;
-  };
+  struct Robot {};
 };
 
 #endif // VSS_BASE_SOFTWARE_ENV_H
