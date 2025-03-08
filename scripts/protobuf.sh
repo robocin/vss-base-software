@@ -1,41 +1,30 @@
 #!/bin/bash
 
-function is_root {
-  [ "${EUID:-$(id -u)}" -eq 0 ];
-}
+PROTOBUF_FILE="protobuf-cpp-3.7.1.tar.gz"
+PROTOBUF_DIR="protobuf-3.7.1"
+PROTOBUF_URL="https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/${PROTOBUF_FILE}"
 
-if ! is_root; then
-  echo -e "\x1B[31m[ERROR] This script requires root privileges."
-  exit 1
-fi
+echo "Installing Protobuf..."
 
-set -e
+sudo apt install -y autoconf automake libtool wget make g++ unzip
 
-PROTOBUF_VERSION="3.7.1"
-PROTOBUF_DIR="protobuf-${PROTOBUF_VERSION}"
-PROTOBUF_ARCHIVE="v${PROTOBUF_VERSION}.tar.gz"
-PROTOBUF_URL="https://github.com/protocolbuffers/protobuf/archive/${PROTOBUF_ARCHIVE}"
-
-echo "Installing Protobuf ${PROTOBUF_VERSION}..."
-
-apt install -y autoconf automake libtool curl make g++ unzip
-
-echo "Downloading Protobuf ${PROTOBUF_VERSION}..."
+echo "Downloading Protobuf..."
 wget ${PROTOBUF_URL}
 
 echo "Extracting files..."
-tar -xvf ${PROTOBUF_ARCHIVE}
+tar -xvf ${PROTOBUF_FILE}
 cd ${PROTOBUF_DIR}
 
-./autogen.sh
+sudo ./autogen.sh
 
-./configure
+sudo ./configure
 
-make -j$(nproc)
-make install
-ldconfig 
+sudo make -j$(nproc)
+sudo make install
+sudo ldconfig 
 
 cd ..
-rm -rf ${PROTOBUF_DIR} ${PROTOBUF_ARCHIVE}
+rm -rf ${PROTOBUF_DIR}
+rm -rf ${PROTOBUF_FILE}
 
-echo "Protobuf ${PROTOBUF_VERSION} installation completed successfully!"
+echo "Protobuf installation completed successfully!"
