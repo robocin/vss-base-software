@@ -117,6 +117,14 @@ namespace robocin::comm {
     double battery = 0;
     uint8_t count = 0; // Packet Count
   };
+
+  struct VSSRobotInfo {
+    int id = -1;
+    MessageType type = MessageType::NONE;
+    double m1 = 0;
+    double m2 = 0;
+    double battery = 0;
+  };
 } // namespace robocin::comm
 
 #endif // COMM_TYPES_H

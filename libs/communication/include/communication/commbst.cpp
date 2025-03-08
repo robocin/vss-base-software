@@ -1,16 +1,14 @@
 #include "commbst.h"
 
-CommBst::VSSSpeedPacket
-CommBst::makeVSSSpeed(uint8_t id, int8_t motorSpeed1, int8_t motorSpeed2, uint8_t flags) {
+CommBst::VSSSpeedPacket CommBst::makeVSSSpeed(uint8_t id, double m1, double m2) {
   VSSSpeedPacket vss;
 
   std::memset(vss.encoded, 0, VSSSpeedPacket::size());
 
   vss.decoded.typeMsg = static_cast<uint8_t>(MessageType::VSS_SPEED);
   vss.decoded.id = id;
-  vss.decoded.leftSpeed = motorSpeed1;
-  vss.decoded.rightSpeed = motorSpeed2;
-  vss.decoded.flags = flags;
+  vss.decoded.m1 = static_cast<int32_t>(m1 * 1000);
+  vss.decoded.m2 = static_cast<int32_t>(m2 * 1000);
 
   return vss;
 }
@@ -152,6 +150,26 @@ CommBst::PositionPacket CommBst::makeTargetToRotateInPointPacket(uint8_t id,
   return pos;
 }
 
+std::optional<CommBst::VSSRobotInfo> CommBst::readVSSTelemetry(const GenericPacket& received) {
+  if (static_cast<MessageType>(received.decoded.typeMsg) == MessageType::VSS_TELEMETRY) {
+    VSSTelemetryPacket telemetry;
+
+    std::memcpy(telemetry.encoded, received.encoded, VSSTelemetryPacket::size());
+
+    VSSRobotInfo info;
+    info.id = telemetry.decoded.id;
+    info.type = MessageType::VSS_TELEMETRY;
+
+    info.m1 = telemetry.decoded.m1 / 1000.0;
+    info.m2 = telemetry.decoded.m2 / 1000.0;
+
+    info.battery = telemetry.decoded.battery / 10.0;
+
+    return info;
+  }
+  return std::nullopt;
+}
+
 std::optional<CommBst::RobotInfo> CommBst::readTelemetry(const GenericPacket& received) {
   if (static_cast<MessageType>(received.decoded.typeMsg) == MessageType::TELEMETRY) {
     TelemetryPacket telemetry;
@@ -228,7 +246,7 @@ CommBst::BStConfigPacket CommBst::makeConfigBst(robocin::comm::NetworkType categ
     config.decoded.channel2 = SSL_2_BASE_RECV_CH;
   } else if (category == robocin::comm::NetworkType::vss) {
     config.decoded.typeMsg = static_cast<uint8_t>(MessageType::BST_CONFIG);
-    config.decoded.duplex = false;
+    config.decoded.duplex = true;
     config.decoded.team = static_cast<uint8_t>(robocin::comm::NetworkType::vss);
     config.decoded.addr1 = VSS_ADDR_1;
     config.decoded.addr2 = VSS_ADDR_2;

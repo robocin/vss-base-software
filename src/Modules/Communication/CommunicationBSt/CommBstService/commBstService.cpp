@@ -8,15 +8,12 @@ CommBstService::CommBstService() {
                     (enableReceive ? CommBst::DEFAULT_RECEIVE_PORT : 0));
 }
 void CommBstService::setup() {
-  if (!bstConfigured) {
-    this->_commBstEth.setup(robocin::comm::NetworkType::vss,
-                            CommBst::DEFAULT_DEVICE_IP,
-                            CommBst::DEFAULT_DEVICE_PORT,
-                            CommBst::DEFAULT_RECEIVE_IP,
-                            (enableReceive ? CommBst::DEFAULT_RECEIVE_PORT : 0));
-    bstConfigured = true;
-    // only one setup by execution
-  }
+  this->_commBstEth.setup(robocin::comm::NetworkType::vss,
+                          CommBst::DEFAULT_DEVICE_IP,
+                          CommBst::DEFAULT_DEVICE_PORT,
+                          CommBst::DEFAULT_RECEIVE_IP,
+                          (enableReceive ? CommBst::DEFAULT_RECEIVE_PORT : 0));
+
   QThread::usleep(600); // wait base-station config radio
 }
 
