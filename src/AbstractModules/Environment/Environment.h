@@ -11,11 +11,6 @@ class Environment : public ModuleBase {
 
  private:
   inline void buildParameters(Parameters::Handler& parameters) override {
-    parameters["Robot"]["SEND_PWM"] = Parameters::CheckBox(Env::Robot::SEND_PWM);
-    parameters["Robot"]["SEND_PWM_CALIBRATION_PRINTS"] =
-        Parameters::CheckBox(Env::Robot::SEND_PWM_CALIBRATION_PRINTS);
-    parameters["Robot"]["WHEEL_RADIUS"] =
-        Parameters::DoubleSpinBox(Env::Robot::WHEEL_RADIUS, 0.001, 1.000, 3);
   }
   inline void exec() override {
   }

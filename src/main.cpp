@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
   QApplication a(argc, argv);
-  MainWindow gui(10, QSizeF(60, 60));
+  MainWindow gui(12, QSizeF(60, 60));
   ThreadPools threads;
   Modules modules(&gui, &threads);
   gui.setup(ROBOCIN_PROJECT_NAME, ROBOCIN_PROJECT_VERSION, ROBOCIN_PROJECT_PATH);

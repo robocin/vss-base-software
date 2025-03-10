@@ -31,6 +31,7 @@ class CommBst {
   using OdometryPacket = robocin::comm::OdometryPacket;
 
   using VSSSpeedPacket = robocin::comm::VSSSpeedPacket;
+  using VSSTelemetryPacket = robocin::comm::VSSTelemetryPacket;
   using SSLSpeedPacket = robocin::comm::SSLSpeedPacket;
 
   using PositionPacket = robocin::comm::PositionPacket;
@@ -38,6 +39,7 @@ class CommBst {
   using BStConfigPacket = robocin::comm::BStConfigPacket;
 
   using RobotInfo = robocin::comm::RobotInfo;
+  using VSSRobotInfo = robocin::comm::VSSRobotInfo;
 
   /**
    * Method to make a VSS speed message type!
@@ -46,8 +48,7 @@ class CommBst {
    * @param motorSpeed2
    * @param flags
    */
-  static VSSSpeedPacket
-  makeVSSSpeed(uint8_t id, int8_t motorSpeed1, int8_t motorSpeed2, uint8_t flags);
+  static VSSSpeedPacket makeVSSSpeed(uint8_t id, double m1, double m2);
 
   /**
    * Method to make a SSL speed message type!
@@ -109,6 +110,7 @@ class CommBst {
                                      uint8_t command);
 
   static std::optional<RobotInfo> readTelemetry(const GenericPacket& received);
+  static std::optional<VSSRobotInfo> readVSSTelemetry(const GenericPacket& received);
   static std::optional<RobotInfo> readOdometry(const GenericPacket& received);
 
   static BStConfigPacket makeConfigBst(robocin::comm::NetworkType category);

@@ -19,8 +19,7 @@ class CommBstService {
 
  private:
   CommBstEth _commBstEth;
-  bool bstConfigured = false;
-  bool enableReceive = false;
+  bool enableReceive = true;
 };
 
 typedef Singleton<CommBstService> BstService;

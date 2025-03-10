@@ -118,17 +118,7 @@ Navigation::Output DefaultNavigation::operator()(const Motion::WheelsRad& Wheels
 }
 
 Navigation::Output DefaultNavigation::makeNavigationOutput(double ls, double rs) {
-  if (Env::Robot::SEND_PWM) {
-    if (Env::Robot::SEND_PWM_CALIBRATION_PRINTS) {
-      qDebug() << "Robot id:" << robot->id() << "LW-RW PWM:" << static_cast<uint8_t>(ls * args.LK)
-               << "-" << static_cast<uint8_t>(rs * args.RK)
-               << "Desired-Vision Speed:" << (ls * Env::Robot::WHEEL_RADIUS) * 1000 << "-"
-               << robot->velocity().norm();
-    }
-    return {robot->id(), ls * args.LK, rs * args.RK};
-  } else {
-    return {robot->id(), ls, rs};
-  }
+  return {robot->id(), ls, rs};
 }
 
 void DefaultNavigation::receivePlanning(const Planning::Output& planning) {

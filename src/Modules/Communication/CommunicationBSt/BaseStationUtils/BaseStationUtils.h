@@ -10,7 +10,7 @@
 
 namespace BaseStation {
   inline QByteArray toRobotControl(const Navigation::Output& command) {
-    auto packet = CommBst::makeVSSSpeed(command.id(), command.leftWheel(), command.rightWheel(), 0);
+    auto packet = CommBst::makeVSSSpeed(command.id(), command.leftWheel(), command.rightWheel());
 
     return QByteArray{packet.c_str(), CommBst::VSSSpeedPacket::size()};
   }
