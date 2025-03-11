@@ -3,5 +3,4 @@ clang-format
 doxygen
 g++
 open-gl
-protobuf
 qt
