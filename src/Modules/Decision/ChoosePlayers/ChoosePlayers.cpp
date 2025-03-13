@@ -21,8 +21,11 @@ std::optional<Robot> ChoosePlayers::takeDefender(Robots<Robot>& allies, Point al
   return std::nullopt;
 }
 
-std::optional<Robot>
-ChoosePlayers::takeAttacker(Robots<Robot>& allies, Robots<Robot>& enemies, Ball ball) const {
-  // TODO: Implement this function.
+std::optional<Robot> ChoosePlayers::takeAttacker(Robots<Robot>& allies, Robots<Robot>& enemies, Ball ball) const {
+  if (auto it = allies.closestTo(ball.position()); it != allies.end()){
+    auto attacker = std::move(*it);
+    allies.erase(it);
+    return attacker;
+  }
   return std::nullopt;
 }

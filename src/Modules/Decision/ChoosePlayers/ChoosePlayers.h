@@ -24,8 +24,7 @@ class ChoosePlayers : public ModuleExtension {
 
   [[nodiscard]] std::optional<Robot> takeGoalkeeper(Robots<Robot>& allies) const;
   [[nodiscard]] std::optional<Robot> takeDefender(Robots<Robot>& allies, Point allyPoint) const;
-  [[nodiscard]] std::optional<Robot>
-  takeAttacker(Robots<Robot>& allies, Robots<Robot>& enemies, Ball ball) const;
+  [[nodiscard]] std::optional<Robot> takeAttacker(Robots<Robot>& allies, Robots<Robot>& enemies, Ball ball) const;
 };
 
 #endif // VSS_BASE_SOFTWARE_CHOOSEPLAYERS_H
