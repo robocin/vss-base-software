@@ -110,8 +110,9 @@ Navigation::Output DefaultNavigation::pid(const Point& target) {
 Navigation::Output DefaultNavigation::operator()(const Motion::GoToPoint& goToPoint) {
   Point start = robot->position();
   Point ball = goToPoint.target();
-  double grid = 1;
-  double min_distance = 10;
+  // Point ball = frame->ball().position();
+  double grid = 100;
+  double min_distance = 80;
 
   std::vector<Point> obstacles;
   for (const auto& enemy : frame->enemies()) {
@@ -119,6 +120,7 @@ Navigation::Output DefaultNavigation::operator()(const Motion::GoToPoint& goToPo
   }
 
   std::vector<Point> path = aStar(start, ball, grid, obstacles, min_distance);
+  // algoritmo dougler peuker
 
   if (path.empty()) {
     return pid(goToPoint.target());
@@ -160,7 +162,7 @@ std::vector<Point> DefaultNavigation::neighbors(const Point& node,
                                    Point(-1, 1)};
   for (const auto& direction : directions) {
     Point neighbor = node + direction * grid;
-    if (neighbor.x() < 0 || neighbor.x() > 180 || neighbor.y() < 0 || neighbor.y() > 120) {
+    if (neighbor.x() < 0 || neighbor.x() > 1500 || neighbor.y() < 0 || neighbor.y() > 1200) { // mm
       continue;
     }
     bool valid = true;
