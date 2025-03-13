@@ -17,6 +17,11 @@ void DefaultPlanning::connectModules(const Modules* modules) {
           this,
           &DefaultPlanning::receiveBehavior,
           Qt::DirectConnection);
+  connect(modules->processedVision()->ithSender(index()),
+          &ProcessedVisionBaseIthSender::sendFrameAndRobot,
+          this,
+          &DefaultPlanning::receiveFrameAndRobot,
+          Qt::DirectConnection);
 }
 
 void DefaultPlanning::init(const Modules* modules) {
@@ -24,6 +29,8 @@ void DefaultPlanning::init(const Modules* modules) {
 
 void DefaultPlanning::update() {
   shared->behavior.extract_to(behavior);
+  shared->frame.extract_to(frame);
+  shared->robot.extract_to(robot);
 }
 
 void DefaultPlanning::exec() {
@@ -33,44 +40,23 @@ void DefaultPlanning::exec() {
   emit sendPlanning(std::visit(*this, behavior.value()));
 }
 
-
-void DefaultPlanning::exec() {
-  if (!behavior) {
-    return;
-  }
-  emit sendPlanning(std::visit(*this, behavior.value()));
-}
-
-
-std::vector<Point> DefaultPlanning::Douglas_Peucker(std::vector<Point> path, double epsilon) {
-  std::vector<Point> result;
-  double dmax = 0;
-  int index = 0;
-  int end = path.size() - 1; //narrowing conversion
-  for (int i = 1; i < end; i++) {
-    double d = Geometry2D::distancePointLine(path[0], path[end], path[i]); 
-    if (d > dmax) {
-      index = i;
-      dmax = d;
-    }
-  }
-  if (dmax > epsilon) {
-    std::vector<Point> rec1 = Douglas_Peucker(std::vector<Point>(path.begin(), path.begin() + index), epsilon);
-    std::vector<Point> rec2 = Douglas_Peucker(std::vector<Point>(path.begin() + index, path.end()), epsilon);
-    result.insert(result.end(), rec1.begin(), rec1.end() - 1);
-    result.insert(result.end(), rec2.begin(), rec2.end());
-  } else {
-    result.push_back(path[0]);
-    result.push_back(path[end]);
-  }
-  return result;
-
-}
-
-
-
+// Implement here
 Planning::Output DefaultPlanning::operator()(const Behavior::OutputType::Planning& planning) {
-  return planning;
+
+  RobotCommand command = std::get<RobotCommand>(planning);
+  if (!std::holds_alternative<Motion::GoToPoint>(command.motion())) {
+    return planning;
+  }
+
+  Motion::GoToPoint goToPoint = std::get<Motion::GoToPoint>(command.motion());
+
+  // Point target = goToPoint.target();
+  // Point robotPosition = shared->robot.value().position();
+  // Point ball = frame->ball().position();
+  // auto newGoToPoint = Motion::GoToPoint(target);
+  // auto newGoToPoint = Motion::GoToPoint(Point(0, 0));
+
+  return Behavior::OutputType::Command(goToPoint);
 }
 
 Planning::Output DefaultPlanning::operator()(const Behavior::OutputType::Navigation& navigation) {
@@ -80,6 +66,11 @@ Planning::Output DefaultPlanning::operator()(const Behavior::OutputType::Navigat
 void DefaultPlanning::receiveBehavior(const Behavior::Output& rcvBehavior) {
   shared->behavior = rcvBehavior;
   runInParallel();
+}
+
+void DefaultPlanning::receiveFrameAndRobot(const Frame& frame, const Robot& robot) {
+  shared->frame = frame;
+  shared->robot = robot;
 }
 
 static_block {

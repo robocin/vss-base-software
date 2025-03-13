@@ -3,6 +3,7 @@
 //
 
 #include "DefaultNavigation.h"
+#include <queue>
 
 DefaultNavigation::DefaultNavigation(int index, QThreadPool* threadPool) :
     NavigationBase(index, threadPool) {
@@ -107,8 +108,28 @@ Navigation::Output DefaultNavigation::pid(const Point& target) {
 }
 
 Navigation::Output DefaultNavigation::operator()(const Motion::GoToPoint& goToPoint) {
-  return pid(goToPoint.target());
+  Point start = robot->position();
+  Point ball = goToPoint.target();
+  // Point ball = frame->ball().position();
+  double grid = 100;
+  double min_distance = 80;
+
+  std::vector<Point> obstacles;
+  for (const auto& enemy : frame->enemies()) {
+    obstacles.push_back(enemy.position());
+  }
+
+  std::vector<Point> path = aStar(start, ball, grid, obstacles, min_distance);
+  // algoritmo dougler peuker
+
+  if (path.empty()) {
+    return pid(goToPoint.target());
+  }
+
+  Point nextPoint = path[1];
+  return pid(nextPoint);
 }
+
 Navigation::Output DefaultNavigation::operator()(const Motion::Spin& spin) {
   const auto [left, right] = spin.clockwise() ? std::pair{1, -1} : std::pair{-1, 1};
   return makeNavigationOutput(spin.power() * left, spin.power() * right);
@@ -119,6 +140,91 @@ Navigation::Output DefaultNavigation::operator()(const Motion::WheelsRad& Wheels
 
 Navigation::Output DefaultNavigation::makeNavigationOutput(double ls, double rs) {
   return {robot->id(), ls, rs};
+}
+
+double DefaultNavigation::heuristic(const Point& start, const Point& end) {
+  return start.distTo(end);
+}
+
+std::vector<Point> DefaultNavigation::neighbors(const Point& node,
+                                                double grid,
+                                                const std::vector<Point>& enemies,
+                                                double min_distance,
+                                                const Point& destination) {
+  std::vector<Point> result;
+  std::vector<Point> directions = {Point(0, 1),
+                                   Point(0, -1),
+                                   Point(1, 0),
+                                   Point(-1, 0),
+                                   Point(1, 1),
+                                   Point(-1, -1),
+                                   Point(1, -1),
+                                   Point(-1, 1)};
+  for (const auto& direction : directions) {
+    Point neighbor = node + direction * grid;
+    if (neighbor.x() < 0 || neighbor.x() > 1500 || neighbor.y() < 0 || neighbor.y() > 1200) { // mm
+      continue;
+    }
+    bool valid = true;
+    for (const auto& enemy : enemies) {
+      if (enemy.distTo(neighbor) < min_distance) {
+        valid = false;
+        break;
+      }
+    }
+    if (!valid) {
+      continue;
+    }
+    result.push_back(neighbor);
+  }
+  return result;
+}
+
+std::vector<Point> DefaultNavigation::aStar(const Point& start,
+                                            const Point& destination,
+                                            double grid,
+                                            const std::vector<Point>& obstacles,
+                                            double min_distance) {
+  // Priority queue (menor f_cost primeiro)
+  std::priority_queue<std::pair<double, Point>,
+                      std::vector<std::pair<double, Point>>,
+                      std::greater<std::pair<double, Point>>>
+      p_queue;
+  p_queue.push({0, start});
+
+  std::map<Point, Point> came_from;
+  std::map<Point, double> g_cost;
+  std::map<Point, double> f_cost;
+
+  g_cost[start] = 0;
+  f_cost[start] = heuristic(start, destination);
+
+  while (!p_queue.empty()) {
+    Point current = p_queue.top().second;
+    p_queue.pop();
+
+    if (current.distTo(destination) < std::max(grid, min_distance * 0.5)) {
+      std::vector<Point> path;
+      while (came_from.find(current) != came_from.end()) {
+        path.push_back(current);
+        current = came_from[current];
+      }
+      path.push_back(start);
+      std::reverse(path.begin(), path.end());
+      return path;
+    }
+
+    for (const auto& neighbor : neighbors(current, grid, obstacles, min_distance, destination)) {
+      double tentative_g_cost = g_cost[current] + heuristic(current, neighbor);
+      if (g_cost.find(neighbor) == g_cost.end() || tentative_g_cost < g_cost[neighbor]) {
+        came_from[neighbor] = current;
+        g_cost[neighbor] = tentative_g_cost;
+        f_cost[neighbor] = g_cost[neighbor] + heuristic(neighbor, destination);
+        p_queue.push({f_cost[neighbor], neighbor});
+      }
+    }
+  }
+  return {};
 }
 
 void DefaultNavigation::receivePlanning(const Planning::Output& planning) {

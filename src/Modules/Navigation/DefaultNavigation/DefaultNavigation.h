@@ -55,6 +55,21 @@ class DefaultNavigation : public NavigationBase {
   Navigation::Output operator()(const Motion::GoToPoint& goToPoint);
   Navigation::Output operator()(const Motion::Spin& spin);
   Navigation::Output operator()(const Motion::WheelsRad& WheelsRad);
+  // Functions for A* algorithm
+  //  function heuristics cost estimate
+  double heuristic(const Point& start, const Point& end);
+  // function to return a list of neighboring points
+  std::vector<Point> neighbors(const Point& node,
+                               double grid,
+                               const std::vector<Point>& enemies,
+                               double min_distance,
+                               const Point& destination);
+  // function to find the shortest path
+  std::vector<Point> aStar(const Point& start,
+                           const Point& end,
+                           double grid,
+                           const std::vector<Point>& enemies,
+                           double min_distance);
 
  private slots:
   Navigation::Output makeNavigationOutput(double ls, double rs);
