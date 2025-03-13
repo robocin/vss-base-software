@@ -19,6 +19,7 @@ class DefaultPlanning : public PlanningBase {
   void update() override;
   void exec() override;
 
+  std::vector<Point> Douglas_Peucker(std::vector<Point> points, double epsilon);  
   struct Shared {
     SharedOptional<Behavior::Output> behavior;
   };
