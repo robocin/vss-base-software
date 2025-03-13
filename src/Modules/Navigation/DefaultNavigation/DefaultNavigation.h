@@ -70,7 +70,7 @@ class DefaultNavigation : public NavigationBase {
                            double grid,
                            const std::vector<Point>& enemies,
                            double min_distance);
-
+  std::vector<Point> Douglas_Peucker(std::vector<Point> path, double epsilon);
  private slots:
   Navigation::Output makeNavigationOutput(double ls, double rs);
   void receivePlanning(const Planning::Output& planning);
