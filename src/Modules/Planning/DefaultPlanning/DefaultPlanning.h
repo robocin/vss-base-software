@@ -21,10 +21,14 @@ class DefaultPlanning : public PlanningBase {
 
   struct Shared {
     SharedOptional<Behavior::Output> behavior;
+    SharedOptional<Frame> frame;
+    SharedOptional<Robot> robot;
   };
   SharedWrapper<Shared, std::mutex> shared;
 
   std::optional<Behavior::Output> behavior;
+  std::optional<Frame> frame;
+  std::optional<Robot> robot;
 
  public:
   Planning::Output operator()(const Behavior::OutputType::Planning& planning);
@@ -32,6 +36,7 @@ class DefaultPlanning : public PlanningBase {
 
  private slots:
   void receiveBehavior(const Behavior::Output& rcvBehavior);
+  void receiveFrameAndRobot(const Frame& frame, const Robot& robot);
 };
 
 #endif // VSS_BASE_SOFTWARE_DEFAULTPLANNING_H
