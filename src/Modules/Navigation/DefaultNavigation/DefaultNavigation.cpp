@@ -122,7 +122,7 @@ Navigation::Output DefaultNavigation::operator()(const Motion::GoToPoint& goToPo
   std::vector<Point> path = aStar(start, ball, grid, obstacles, min_distance);
   // algoritmo dougler peuker
   double tolereance = 50;
-  path = Douglas_Peucker(path, tolereance);
+  path = douglasPeucker(path, tolereance);
   if (path.empty()) {
     return pid(goToPoint.target());
   }
@@ -229,7 +229,7 @@ std::vector<Point> DefaultNavigation::aStar(const Point& start,
 }
 
 
-std::vector<Point> DefaultPlanning::Douglas_Peucker(std::vector<Point> path, double epsilon) {
+std::vector<Point> DefaultNavigation::douglasPeucker(std::vector<Point> path, double epsilon) {
   std::vector<Point> result;
   double dmax = 0;
   int index = 0;
@@ -242,8 +242,8 @@ std::vector<Point> DefaultPlanning::Douglas_Peucker(std::vector<Point> path, dou
     }
   }
   if (dmax > epsilon) {
-    std::vector<Point> rec1 = Douglas_Peucker(std::vector<Point>(path.begin(), path.begin() + index), epsilon);
-    std::vector<Point> rec2 = Douglas_Peucker(std::vector<Point>(path.begin() + index, path.end()), epsilon);
+    std::vector<Point> rec1 = douglasPeucker(std::vector<Point>(path.begin(), path.begin() + index), epsilon);
+    std::vector<Point> rec2 = douglasPeucker(std::vector<Point>(path.begin() + index, path.end()), epsilon);
     result.insert(result.end(), rec1.begin(), rec1.end() - 1);
     result.insert(result.end(), rec2.begin(), rec2.end());
   } else {
